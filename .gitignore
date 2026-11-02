@@ -1,0 +1,28 @@
+# 模型权重（不入库，过大）
+*.safetensors
+*.bin
+*.onnx
+*.onnx_data
+*.pt
+*.pth
+*.ckpt
+*.msgpack
+
+# 训练/大规模数据集（不入库）
+*.parquet
+LoRA/data/keywords_data_train.jsonl
+trl/data/keywords_data_train.jsonl
+
+# Python 编译缓存
+__pycache__/
+*.pyc
+
+# 编辑器 / IDE
+.idea/
+*.msc
+*.mv
+*.mdl
+*~
+
+# 环境变量
+.env

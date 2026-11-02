@@ -1,0 +1,34 @@
+# 基础
+python>=3.10
+
+# 深度学习 / 微调
+torch
+transformers
+datasets
+accelerate
+peft
+trl
+sentencepiece
+bitsandbytes
+
+# 向量检索 / RAG
+faiss-cpu
+pymilvus
+sentence-transformers
+FlagEmbedding
+
+# LangChain / LangGraph / Agent
+langchain
+langchain-openai
+langchain-community
+langgraph
+openai
+
+# 文档加载
+pypdf
+python-docx
+markdown
+
+# Web 服务
+fastapi
+uvicorn
