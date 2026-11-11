@@ -17,7 +17,7 @@ def mineru_upload_file_demo():
       ],
       "model_version":"vlm"
       }
-      file_path = [r"D:\PycharmProjects\langchain_2603\rag\data\sample.pdf"]
+      file_path = [os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "sample.pdf")]
       try:
             response = requests.post(url,headers=header,json=data)
             if response.status_code == 200:
