@@ -3,8 +3,8 @@ import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key="REDACTED_DEEPSEEK_KEY",
-    base_url="https://api.deepseek.com")
+    api_key=os.environ.get("DEEPSEEK_API_KEY"),
+    base_url=os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
 
 response = client.chat.completions.create(
     model="deepseek-v4-pro",

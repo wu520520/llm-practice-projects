@@ -9,7 +9,7 @@ def mineru_upload_file_demo():
       url = "https://mineru.net/api/v4/file-urls/batch"
       header = {
             "Content-Type": "application/json",
-            "Authorization": f"Bearer REDACTED_MINERU_TOKEN"
+            "Authorization": f"Bearer {token}"
       }
       data = {
       "files": [
@@ -52,7 +52,7 @@ def mineru_check_result_demo(batch_id):
     url = f"https://mineru.net/api/v4/extract-results/batch/{batch_id}"
     header = {
               "Content-Type": "application/json",
-              "Authorization": f"Bearer REDACTED_MINERU_TOKEN"
+              "Authorization": f"Bearer {token}"
     }
 
     res = requests.get(url, headers=header)
