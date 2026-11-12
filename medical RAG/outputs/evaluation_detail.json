@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "disease": "糖尿病",
+    "question": "糖尿病有哪些典型症状？",
+    "reference_answer": "糖尿病的典型症状是“三多一少”：多饮、多尿、多食和体重下降。此外还可能出现视力模糊、皮肤瘙痒等症状。",
+    "generated_answer": "根据现有资料，糖尿病的典型症状包括：\n\n- 多饮、多尿、多食、体重下降  \n- 典型症状描述如下：  \n  - 多饮、多尿、多食、体重下降  \n  - 眼、肾、心脏等多器官慢性损害  \n\n如需更详细的信息或进一步帮助，请咨询专业医生。",
+    "sources": "糖尿病",
+    "auto_accuracy": 4,
+    "auto_completeness": 5,
+    "human_accuracy": "",
+    "human_completeness": "",
+    "judge_raw": "{\"accuracy\": 4, \"completeness\": 5}"
+  },
+  {
+    "id": 2,
+    "disease": "前列腺增生",
+    "question": "前列腺增生需要手术吗？",
+    "reference_answer": "轻度增生可通过药物治疗改善；若出现反复尿潴留、血尿或影响肾功能，则需考虑经尿道前列腺切除术等手术治疗。",
+    "generated_answer": "根据现有资料，前列腺增生是一种常见的良性疾病，通常由前列腺体积增大压迫尿道引起，可能导致尿频、尿急、夜尿增多和排尿困难等症状。治疗方面，非那雄胺和坦索罗辛是常用的药物，但这些药物主要用于缓解症状，而非手术治疗。\n\n如果症状严重或持续存在，建议及时就医，由专业医生评估病情并制定合适的治疗方案。目前尚无明确证据表明前列腺增生一定需要手术治疗，因此在没有明确症状或病情复杂的情况下，一般不建议自行决定手术。",
+    "sources": "前列腺增生",
+    "auto_accuracy": 3,
+    "auto_completeness": 4,
+    "human_accuracy": "",
+    "human_completeness": "",
+    "judge_raw": "```json\n{\"accuracy\": 3, \"completeness\": 4}\n```"
+  },
+  {
+    "id": 3,
+    "disease": "过敏性鼻炎",
+    "question": "过敏性鼻炎能彻底治愈吗？",
+    "reference_answer": "目前无法完全根治，但通过避免接触过敏原、规范使用抗过敏药物和脱敏治疗，症状可长期稳定控制，不影响生活质量。",
+    "generated_answer": "根据现有资料，过敏性鼻炎通常不是完全可治愈的。它是由IgE介导的鼻黏膜炎症，可能在某些情况下被控制或缓解，但大多数情况下仍需要长期管理。如果症状持续或加重，建议及时就医，以便进行更详细的检查和治疗。",
+    "sources": "过敏性鼻炎",
+    "auto_accuracy": 4,
+    "auto_completeness": 5,
+    "human_accuracy": "",
+    "human_completeness": "",
+    "judge_raw": "{\"accuracy\": 4, \"completeness\": 5}"
+  },
+  {
+    "id": 4,
+    "disease": "高血压",
+    "question": "高血压日常需要注意什么？",
+    "reference_answer": "高血压患者需低盐低脂饮食，每日食盐摄入不超过5克；戒烟限酒；规律监测血压；保持情绪稳定，避免剧烈运动。",
+    "generated_answer": "根据现有资料，高血压日常需要注意以下几点：\n\n1. **保持良好生活习惯**：规律作息、适量运动、控制饮食，避免过量饮酒和吸烟。\n\n2. **监测血压**：定期测量血压，尤其是每天早上起床后和饭前饭后，以及时了解血压变化。\n\n3. **遵医嘱用药**：按时服用推荐的降压药物，如硝苯地平或氨氯地平，不要自行调整剂量。\n\n4. **注意身体信号**：如果出现头痛、头晕、颈项强直、疲劳等症状，应及时就医。\n\n建议您定期体检，如有不适及时咨询医生。",
+    "sources": "高血压",
+    "auto_accuracy": 4,
+    "auto_completeness": 5,
+    "human_accuracy": "",
+    "human_completeness": "",
+    "judge_raw": "{\"accuracy\": 4, \"completeness\": 5}"
+  },
+  {
+    "id": 5,
+    "disease": "抑郁症",
+    "question": "抑郁症是不是就是“想太多”？",
+    "reference_answer": "不是。抑郁症是一种有明确生物学基础的疾病，与大脑神经递质失衡有关。患者无法通过“想开点”自愈，需要专业的心理治疗和药物干预。",
+    "generated_answer": "根据现有资料，抑郁症的主要特征是持续的情绪低落、兴趣减退、睡眠障碍和疲劳，而不是单纯的“想太多”。因此，不能将抑郁症等同于“想太多”。如果您有更多关于抑郁症的具体问题，建议咨询专业医生进行详细评估。",
+    "sources": "抑郁症",
+    "auto_accuracy": 3,
+    "auto_completeness": 4,
+    "human_accuracy": "",
+    "human_completeness": "",
+    "judge_raw": "{\"accuracy\": 3, \"completeness\": 4}"
+  }
+]

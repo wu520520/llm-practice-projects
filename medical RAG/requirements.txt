@@ -1,0 +1,29 @@
+# 医疗知识库 RAG 智能问答系统依赖（Python 3.11+，推荐 conda 环境）
+# 数据处理（KA#2）
+pandas>=2.0
+numpy>=1.26
+
+# 深度学习 / 预训练模型（KA#1、KA#4）
+torch>=2.1
+transformers>=4.51
+sentence-transformers>=3.0
+accelerate>=0.27
+
+# 向量检索（KA#5）
+faiss-cpu>=1.7
+
+# RAG 编排
+langchain>=0.3
+langchain-core>=0.3
+langchain-community>=0.3
+langchain-huggingface>=0.1
+langchain-openai>=0.2
+
+# Web 服务（KA#6）
+fastapi>=0.110
+uvicorn>=0.27
+pydantic>=2.5
+
+# 在线大模型客户端与配置（LLM_MODE=api 时使用）
+openai>=1.30
+python-dotenv>=1.0
