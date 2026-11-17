@@ -10,7 +10,7 @@
 
 ### 🤖 RAG 检索增强生成
 - **`rag/`** — RAG 全流程：多格式文档加载（Markdown / Word / PDF）、文本切分、BGE 稠密+稀疏向量、Milvus 向量库建库/增删/检索
-- **`medical RAG/`** — 医疗问答 RAG 完整应用：向量库 + FAISS 索引 + LLM 生成 + 评估报告（含 API 服务）
+- **`medical-rag/`** — 医疗问答 RAG 完整应用：向量库 + FAISS 索引 + LLM 生成 + 评估报告（含 API 服务）
 
 ### 🧠 Agent 智能体
 - **`agent/`** — OpenAI SDK / LangChain 工具调用、ReAct Agent、MCP Server/Client（stdio、streamable http）、Tavily 搜索
@@ -22,10 +22,10 @@
 ### 🎯 LLM 微调（PEFT + 对齐）
 - **`sft/`** — Qwen3-0.6B 监督微调（SFT），含数据处理与训练
 - **`dpo/`** — DPO 偏好优化
-- **`LoRA/` / `qlora/`** — LoRA 与 QLoRA 低秩微调（训练 / 合并 / 预测）
-- **`loRA_dpo/`** — LoRA + DPO 组合微调
+- **`lora/` / `qlora/`** — LoRA 与 QLoRA 低秩微调（训练 / 合并 / 预测）
+- **`lora-dpo/`** — LoRA + DPO 组合微调
 - **`trl/`** — 基于 TRL 的微调
-- **`undloth/`** — Unsloth 快速微调
+- **`unsloth/`** — Unsloth 快速微调
 
 ---
 
@@ -42,7 +42,7 @@ Python · PyTorch · HuggingFace Transformers / TRL · PEFT · LangChain · Lang
 pip install -r requirements.txt
 
 # 进入对应项目目录运行，例如 RAG 应用
-cd "medical RAG"
+cd medical-rag
 python run.py
 ```
 

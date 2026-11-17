@@ -10,7 +10,7 @@
 
 # 训练/大规模数据集（不入库）
 *.parquet
-LoRA/data/keywords_data_train.jsonl
+lora/data/keywords_data_train.jsonl
 trl/data/keywords_data_train.jsonl
 
 # Python 编译缓存
