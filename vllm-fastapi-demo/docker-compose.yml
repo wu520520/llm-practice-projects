@@ -1,0 +1,57 @@
+services:
+  vllm:
+    image: vllm/vllm-openai:latest
+    container_name: vllm-engine
+    gpus: all
+    ipc: host
+    ports:
+      - "8000:8000"
+    volumes:
+      - hf-cache:/root/.cache/huggingface
+    environment:
+      HF_HOME: /root/.cache/huggingface
+    command:
+      - --model
+      - ${MODEL_ID:-Qwen/Qwen2.5-1.5B-Instruct}
+      - --served-model-name
+      - ${SERVED_MODEL_NAME:-qwen2.5-1.5b}
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"
+      - --api-key
+      - ${VLLM_API_KEY:-local-vllm-key}
+      - --max-model-len
+      - "4096"
+      - --gpu-memory-utilization
+      - "0.85"
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=5)"
+      interval: 20s
+      timeout: 10s
+      retries: 30
+      start_period: 90s
+    restart: unless-stopped
+
+  api:
+    build:
+      context: ./api
+    container_name: vllm-fastapi-gateway
+    environment:
+      VLLM_BASE_URL: http://vllm:8000/v1
+      VLLM_API_KEY: ${VLLM_API_KEY:-local-vllm-key}
+      SERVED_MODEL_NAME: ${SERVED_MODEL_NAME:-qwen2.5-1.5b}
+      REQUEST_TIMEOUT_SECONDS: ${REQUEST_TIMEOUT_SECONDS:-120}
+    ports:
+      - "8080:8080"
+    depends_on:
+      vllm:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  hf-cache:
