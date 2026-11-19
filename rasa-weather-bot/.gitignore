@@ -1,0 +1,20 @@
+# ===== Rasa 训练产物与缓存（体积大、可重新生成，不入库）=====
+.rasa/
+models/
+*.tar.gz
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.pyo
+
+# ===== 环境变量（含 API Key，禁止提交）=====
+.env
+
+# ===== IDE =====
+.idea/
+.vscode/
+
+# ===== 系统文件 =====
+.DS_Store
+Thumbs.db

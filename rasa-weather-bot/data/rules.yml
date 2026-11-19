@@ -1,0 +1,31 @@
+version: "3.1"
+
+rules:
+  - rule: 意图置信度低时进行询问
+    steps:
+      - intent: nlu_fallback
+      - action: utter_rephrase
+
+  - rule: 告别
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+      - action: action_restart
+      - active_loop: null
+      - action: action_listen
+
+  - rule: 询问天气，开启表单
+    steps:
+      - intent: ask_weather
+      - action: weather_form
+      - active_loop: weather_form
+
+  - rule: 表单填写完毕后提交
+    condition:
+      - active_loop: weather_form
+    steps:
+      - action: weather_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_weather_form_submit

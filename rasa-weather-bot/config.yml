@@ -1,0 +1,44 @@
+recipe: default.v1
+assistant_id: weather_bot
+language: zh
+
+pipeline:
+  # 中文分词器（Rasa自带的jieba词元切分）
+  - name: JiebaTokenizer
+
+  # 语言模型特征提取器：中文 BERT 语义特征
+  # 不指定 model_weights 时，Rasa 会自动从 HuggingFace 下载 bert-base-chinese；
+  # 如需使用本地权重，把 BERT 目录放在项目内并用相对路径引用，例如：
+  #   model_weights: ./models/bert-base-chinese
+  - name: LanguageModelFeaturizer
+    model_name: bert
+
+  # DIET分类器：同时做 意图识别 + 实体抽取
+  - name: DIETClassifier
+    epochs: 100
+    learning_rate: 0.001
+    constrain_similarities: true
+
+  # 同义词映射（把"今日/当日"归一为"今天"）
+  - name: EntitySynonymMapper
+
+  # 意图置信度兜底：低于阈值时触发 nlu_fallback
+  - name: FallbackClassifier
+    threshold: 0.7
+    ambiguity_threshold: 0.1
+
+policies:
+  # 记忆策略：记住完全匹配过的对话故事
+  - name: MemoizationPolicy
+
+  # 硬规则策略：控制表单开启、表单提交、告别等强规则流程
+  - name: RulePolicy
+    core_fallback_threshold: 0.7
+    core_fallback_action_name: "action_fallback"
+    enable_fallback_prediction: True
+
+  # 神经网络对话策略：从stories学习对话路径
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 100
+    constrain_similarities: true

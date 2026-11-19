@@ -1,0 +1,59 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - who_are_you
+  - ask_weather
+
+entities:
+  - location
+  - date
+
+slots:
+  location:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+
+forms:
+  weather_form:
+    required_slots:
+      - location
+      - date
+
+responses:
+  utter_greet:
+    - text: "你好，有什么可以帮你的吗？"
+    - text: "你好，很高兴为你服务！"
+
+  utter_goodbye:
+    - text: "再见，祝你生活愉快！"
+    - text: "再见！"
+
+  utter_iamabot:
+    - text: "我是天气助手，可以帮助你查询天气信息。"
+
+  utter_ask_location:
+    - text: "请问你要查询哪个城市的天气信息？"
+
+  utter_ask_date:
+    - text: "请问你要查询哪一天的天气信息？"
+
+  utter_rephrase:
+    - text: "什么意思呢，能再说一遍吗？"
+    - text: "不好意思，我没有理解你的意思。"
+
+actions:
+  - action_weather_form_submit
+  - action_fallback
+
+session_config:
+  session_expiration_time: 5
+  carry_over_slots_to_new_session: true

@@ -1,6 +1,6 @@
 # LLM 大模型应用与微调项目集
 
-面向 **大模型应用工程师** 的实战项目集，覆盖 **RAG 检索增强生成 · Agent 智能体 · LangChain/LangGraph · LLM 微调（SFT / DPO / LoRA / QLoRA / TRL / Unsloth）· 推理部署（vLLM + FastAPI）** 全链路。
+面向 **大模型应用工程师** 的实战项目集，覆盖 **RAG 检索增强生成 · Agent 智能体 · LangChain/LangGraph · LLM 微调（SFT / DPO / LoRA / QLoRA / TRL / Unsloth）· 推理部署（vLLM + FastAPI）· 任务型对话（Rasa）** 全链路。
 
 > 模型权重与大规模训练数据集体积过大，不入库；保留全部源码与演示数据，可本地下载权重后运行。
 
@@ -30,11 +30,14 @@
 ### 🚀 推理部署
 - **`vllm-fastapi-demo/`** — vLLM 推理服务 + FastAPI 业务网关：OpenAI 兼容接口、SSE 流式输出、健康检查、并发压测，Docker Compose 一键部署
 
+### 💬 任务型对话机器人
+- **`rasa-weather-bot/`** — Rasa 中文天气查询机器人：意图识别 + 实体抽取 + 表单槽位填充 + 自定义 Action 调用心知天气 API
+
 ---
 
 ## 🛠 Tech Stack
 
-Python · PyTorch · HuggingFace Transformers / TRL · PEFT · LangChain · LangGraph · OpenAI SDK · MCP · Milvus · FAISS · BGE · Qwen · vLLM · FastAPI · Docker · Unsloth
+Python · PyTorch · HuggingFace Transformers / TRL · PEFT · LangChain · LangGraph · OpenAI SDK · MCP · Milvus · FAISS · BGE · Qwen · vLLM · FastAPI · Docker · Rasa · Unsloth
 
 ---
 

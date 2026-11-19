@@ -1,0 +1,58 @@
+version: "3.1"
+nlu:
+  - intent: greet
+    examples: |
+      - 你好
+      - 您好
+      - 哈喽
+      - hello
+      - 嗨
+      - hi
+      - 在么
+
+  - intent: goodbye
+    examples: |
+      - 再见
+      - 拜拜
+      - 拜
+      - bye
+      - 退出
+      - 结束
+      - 不用了
+      - 谢谢
+      - 行，谢谢
+
+  - intent: who_are_you
+    examples: |
+      - 你是谁啊
+      - 你是谁
+      - 你是机器人吗
+      - 你能做些什么
+
+  - intent: ask_weather
+    examples: |
+      - 天气
+      - 查天气
+      - 我想查看天气
+      - 我想知道[今天](date)的天气
+      - [今天](date)的天气
+      - [明天](date)的天气
+      - [后天](date)的天气
+      - [北京](location)的天气
+      - [上海](location)什么天气
+      - 我要[上海](location)[明天](date)的天气
+      - [北京](location)[后天](date)的天气
+
+  - synonym: 今天
+    examples: |
+      - 当日
+      - 今日
+      - 本日
+  - synonym: 明天
+    examples: |
+      - 明日
+      - 第二天
+  - synonym: 后天
+    examples: |
+      - 两天后
+      - 第三天
